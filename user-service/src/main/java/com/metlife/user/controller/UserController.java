@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.metlife.user.model.Customer;
-import com.metlife.user.model.User;
+import com.metlife.user.model.dto.UserLogin;
 import com.metlife.user.service.UserService;
 
 import java.util.Optional;
@@ -22,13 +22,20 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping("/verfyUser")
-	public ResponseEntity<?> VerifyUser(@RequestBody Customer customer ) {
-		Optional<User> user = userService.verifyUser(customer);
+	public ResponseEntity<?> VerifyUser(@RequestBody UserLogin loginUser) {
+		
+		Optional<Customer> user = userService.verifyUser(loginUser);
 		
 		if (user.isPresent())
 	        return ResponseEntity.ok(user.get());
 		
 		return ResponseEntity.ok(false);
 	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<?> registerUser(@RequestBody String entity) {		
+		return null;
+	}
+	
 	
 }

@@ -3,13 +3,11 @@ package com.metlife.user.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 @Document(collection = "users")
-public class User {
+public class UserAdditionalDetails {
     @Id
     private String id;
     private String name;
@@ -23,5 +21,4 @@ public class User {
     private int smoking;   // 0=No, 1=Yes
     private int diabetes;  // 0=No, 1=Yes
     private int heartAttack; // 0=No, 1=Yes
-    private boolean isExistingUser; //true = existing, false = doen't exist
 }
