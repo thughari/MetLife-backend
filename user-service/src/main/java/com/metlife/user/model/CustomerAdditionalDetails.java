@@ -4,21 +4,25 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Setter
+@Getter
 @Document(collection = "users")
-public class UserAdditionalDetails {
+public class CustomerAdditionalDetails {
     @Id
     private String id;
     private String name;
     private int age;
-    private int sex; // 0=Female, 1=Male
+    private String sex;
     private double totalCholesterol;
     private double ldl;
     private double hdl;
     private int systolicBp;
     private int diastolicBp;
-    private int smoking;   // 0=No, 1=Yes
-    private int diabetes;  // 0=No, 1=Yes
-    private int heartAttack; // 0=No, 1=Yes
+    private Boolean smoking;   // 0=No, 1=Yes
+    private Boolean diabetes;  // 0=No, 1=Yes
+    private Boolean heartAttack; // 0=No, 1=Yes
 }

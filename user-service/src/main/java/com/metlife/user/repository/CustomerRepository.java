@@ -4,6 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.metlife.user.model.Customer;
 
-public interface UserRepository  extends MongoRepository<Customer, String>{
+public interface CustomerRepository  extends MongoRepository<Customer, String>{
 
 }
